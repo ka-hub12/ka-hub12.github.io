@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+//注意事項
+//アクセス
+//物販情報など
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Q-FES adult 2027</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+  <a href="#about">概要</a>
+  <a href="#news">お知らせ</a>
+  <a href="#artists">出演者</a>
+  <a href="#schedule">スケジュール</a>
+  <a href="#ticket">チケット</a>
+  <a href="#contact">お問い合わせ</a>
+</nav>
+
+<header>
+  <h1>Q-FES adult 2027</h1>
+  <p>あの頃みたいに、あの場所で！</p>
+</header>
+
+<section id="about">
+  <h2>ライブ概要</h2>
+    <p>九州国際高等学園の卒業生が主役となるQ-FES adultがついに！</p>
+  <p>記念すべき第一回は2027年3月6日 RAG-Gにて開催！</p>
+</section>
+
+<section id="news">
+  <h2>お知らせ</h2>
+  <div class="news">
+
+    <a href="news2.html" class="news-item" data-date="2026-05-28">
+      <strong>2026/05/28</strong><br>
+      HP公開！
+      <span class="new-badge"></span>
+    </a>
+
+    <a href="news1.html" class="news-item" data-date="2026-05-28">
+      <strong>2026/05/28</strong><br>
+      Q-FES adult 2027 開催決定！
+      <span class="new-badge"></span>
+    </a>
+
+  </div>
+</section>
+
+<section id="artists">
+  <h2>出演アーティスト</h2>
+  <div class="artists">
+    <div class="card">詳細後日発表予定<br>お楽しみに！</div>
+  </div>
+</section>
+
+<section id="schedule">
+  <h2>スケジュール</h2>
+  <div class="schedule">
+    <div class="card">詳細後日発表予定</div>
+  </div>
+</section>
+
+<section id="ticket">
+  <h2>チケット</h2>
+  <div class="tiket">
+    <div class="card">詳細後日発表予定</div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>お問い合わせ</h2>
+　<p>Instagram: @qfesadult</p>
+  <p>Email: qfesadult@gmail.com</p>
+</section>
+
+<footer>
+  <p>© 2027 Q-FES adult</p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  function isNew(dateStr) {
+    var now = new Date();
+    var date = new Date(dateStr);
+    if (isNaN(date)) return false;
+
+    var diff = (now - date) / (1000 * 60 * 60 * 24);
+    return diff <= 7;
+  }
+
+  var items = document.querySelectorAll(".news-item");
+
+  items.forEach(function(item) {
+    var date = item.getAttribute("data-date");
+    var badge = item.querySelector(".new-badge");
+
+    if (badge && date && isNew(date)) {
+      badge.textContent = "NEW";
+    }
+  });
+
+});
+</script>
+</body>
+</html>
